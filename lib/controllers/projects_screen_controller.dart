@@ -210,7 +210,7 @@ class ProjectScreenController extends GetxController {
   }
 
   Future<void> _updateConnectionStatus(List<ConnectivityResult> results) async {
-    final previouslyOffline = !hasInternetConnection.value;
+
     // Check if any of the results indicate an active connection
     hasInternetConnection.value = results.any(
       (result) => result != ConnectivityResult.none,

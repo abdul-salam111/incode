@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'dart:io';
+
 import 'package:in_code/config/brightness/brightness_service.dart';
 
 import 'package:connectivity_plus/connectivity_plus.dart';
@@ -240,8 +240,8 @@ class UtilitiScreenController extends GetxController {
       allCategories.value = await projectsRepostiory
           .getAllProjectsWithCategory();
       filteredCategories.value = List.from(allCategories);
-      print("Fetched categories: ${filteredCategories.value}");
-      extractProjectDetailsById(selectedProjectId!.value);
+
+      extractProjectDetailsById(selectedProjectId.value);
       isloading.value = false;
       isDataLoaded.value = true;
     } on NoInternetException {
@@ -303,7 +303,7 @@ class UtilitiScreenController extends GetxController {
   }
 
   Future<void> _updateConnectionStatus(List<ConnectivityResult> results) async {
-    final previouslyOffline = !hasInternetConnection.value;
+
     hasInternetConnection.value = results.any((result) => result != ConnectivityResult.none);
 
     // Only update the connection status, don't show notifications

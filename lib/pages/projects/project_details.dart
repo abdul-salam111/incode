@@ -300,7 +300,10 @@ class _ProjectDetailsState extends State<ProjectDetails> {
       child: Scaffold(
         appBar: AppBar(
           iconTheme: const IconThemeData(color: Colors.white),
-          title: Text("Project Details", style: TextStyle(color: Colors.white)),
+          title: Text(
+            "Dettagli progetto",
+            style: TextStyle(color: Colors.white),
+          ),
           backgroundColor: AppColors.primaryColor,
           actions: [
             PopupMenuButton<String>(
@@ -637,7 +640,21 @@ class _ProjectDetailsState extends State<ProjectDetails> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: objects.entries
-                .map((entry) => Text("${entry.key} : ${entry.value}"))
+                .where(
+                  (entry) =>
+                      ((entry.value != null)) &&
+                      (entry.key != "code_object") &&
+                      (entry.value is String || entry.value is Map),
+                )
+                .map(
+                  (entry) => Text(
+                    "${entry.key.toString().toLowerCase() == "description_type_object"
+                        ? "Descrizione oggetto: "
+                        : entry.key.toLowerCase() == "details_object"
+                        ? "Dettagli oggetto: "
+                        : entry.key} : ${entry.value}",
+                  ),
+                )
                 .toList(),
           ),
           HeightBox(10),
@@ -650,7 +667,22 @@ class _ProjectDetailsState extends State<ProjectDetails> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: points.entries
-                .map((entry) => Text("${entry.key} : ${entry.value}"))
+                .where(
+                  (entry) =>
+                      ((entry.value != null)) &&
+                      (entry.value is String || entry.value is Map),
+                )
+                .map(
+                  (entry) => Text(
+                    "${entry.key.toString().toLowerCase() == "description_point"
+                        ? "Punt"
+                        : entry.key.toString().toLowerCase() == "description_type_point"
+                        ? "Tipo punto"
+                        : entry.key.toString().toLowerCase() == "details_point"
+                        ? "Dettagli punto"
+                        : entry.key} : ${entry.value}",
+                  ),
+                )
                 .toList(),
           ),
         ],
@@ -684,7 +716,21 @@ class _ProjectDetailsState extends State<ProjectDetails> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: objects.entries
-                    .map((entry) => Text("${entry.key} : ${entry.value}"))
+                    .where(
+                      (entry) =>
+                          ((entry.value != null)) &&
+                          (entry.key != "code_object") &&
+                          (entry.value is String || entry.value is Map),
+                    )
+                    .map(
+                      (entry) => Text(
+                        "${entry.key == "description_type_object"
+                            ? "Descrizione oggetto"
+                            : entry.key == "details_object"
+                            ? "Dettagli oggetto"
+                            : ""} ${entry.value}",
+                      ),
+                    )
                     .toList(),
               ),
             ],
@@ -710,7 +756,22 @@ class _ProjectDetailsState extends State<ProjectDetails> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: points.entries
-                    .map((entry) => Text("${entry.key} : ${entry.value}"))
+                    .where(
+                      (entry) =>
+                          ((entry.value != null)) &&
+                          (entry.value is String || entry.value is Map),
+                    )
+                    .map(
+                      (entry) => Text(
+                        "${entry.key.toString().toLowerCase() == "description_point"
+                            ? "Punt"
+                            : entry.key.toString().toLowerCase() == "description_type_point"
+                            ? "Tipo punto"
+                            : entry.key.toString().toLowerCase() == "details_point"
+                            ? "Dettagli punto"
+                            : entry.key} : ${entry.value}",
+                      ),
+                    )
                     .toList(),
               ),
             ],

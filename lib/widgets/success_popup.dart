@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:in_code/res/colors.dart';
 
-
 class CustomScanDialog extends StatelessWidget {
   final String title;
   final String description;
@@ -54,14 +53,18 @@ class CustomScanDialog extends StatelessWidget {
         children: [
           Container(
             margin: const EdgeInsets.only(top: 60),
-            padding:
-                const EdgeInsets.only(top: 60, left: 24, right: 24, bottom: 16),
+            padding: const EdgeInsets.only(
+              top: 60,
+              left: 24,
+              right: 24,
+              bottom: 16,
+            ),
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(16),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.05),
+                  color: Colors.black.withAlpha(90),
                   blurRadius: 20,
                   offset: const Offset(0, 10),
                 ),
@@ -99,8 +102,9 @@ class CustomScanDialog extends StatelessWidget {
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: cancelButtonColor,
                                 foregroundColor: cancelTextColor,
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 14),
+                                padding: const EdgeInsets.symmetric(
+                                  vertical: 14,
+                                ),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(8),
                                 ),
@@ -119,8 +123,9 @@ class CustomScanDialog extends StatelessWidget {
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: continueButtonColor,
                                 foregroundColor: continueTextColor,
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 14),
+                                padding: const EdgeInsets.symmetric(
+                                  vertical: 14,
+                                ),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(8),
                                 ),

@@ -1,12 +1,12 @@
+// ignore_for_file: unrelated_type_equality_checks
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:in_code/config/storage/sharedpref_keys.dart';
 import 'package:in_code/controllers/dettaglioggetto_controller.dart';
 import 'package:in_code/controllers/projects_screen_controller.dart';
 import 'package:in_code/models/get_all_subprojects.dart';
-import 'package:in_code/pages/navbar.dart';
 import 'package:in_code/controllers/navbar_controller.dart'; // Ensure NavbarController is imported
-import 'package:in_code/pages/scanner.dart';
 import 'package:in_code/res/res.dart';
 import 'package:in_code/models/scannedQrCode_data.dart';
 
@@ -142,17 +142,17 @@ class _DettagliOggettoScreen1State extends State<DettagliOggettoScreen1> {
                       ),
                     ),
                     const SizedBox(height: 16),
-                    if (projectController.projectTitle.value != null)
+                    if (projectController.projectTitle.value.isNotEmpty)
                       _buildDetailRow(
                         "Progetto",
                         projectController.projectTitle.value.toString(),
                       ),
-                    if (projectController.projectSubtittle.value != null)
+                    if (projectController.projectSubtittle.value.isNotEmpty)
                       _buildDetailRow(
                         "Sottotitolo",
                         projectController.projectSubtittle.value.toString(),
                       ),
-                    if (matchedPoint != null) ...[
+                    if (matchedPoint!=null) ...[
                       _buildDetailRow(
                         "Tipologia Punto",
                         matchedPoint.descriptionTypePoint ?? '',
@@ -208,13 +208,13 @@ class _DettagliOggettoScreen1State extends State<DettagliOggettoScreen1> {
             _buildActionButton("Esegui intervento", () {
               final navbarController = Get.find<NavbarController>();
               navbarController.navigateEseguiInterventoScreen();
-              // TODO: implement this action
+        
             }),
             const SizedBox(height: 12),
             _buildActionButton("Cambia posizione", () {
               final navbarController = Get.find<NavbarController>();
               navbarController.navigateTocambiaPosizone();
-              // TODO: implement this action
+
             }),
             const SizedBox(height: 12),
             _buildActionButton("Rimuovi da progetto", () {

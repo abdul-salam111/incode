@@ -1,4 +1,5 @@
 {
     // "dart.flutterSdkPath": "/Users/armalik/Downloads/inCode-main/.fvm/versions/3.27.1"
-    "dart.flutterSdkPath": "/Users/armalik/Documents/flutter/bin",
+    "dart.flutterSdkPath": "/Users/apple/Documents/flutter/sdk/flutter",
+    "cmake.ignoreCMakeListsMissing": true
 }

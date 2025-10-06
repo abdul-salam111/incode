@@ -1,6 +1,5 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
 import 'package:in_code/controllers/dettaglioggetto_controller.dart';
 import 'package:in_code/controllers/projects_screen_controller.dart';
 import 'package:in_code/controllers/scan_controller.dart';
@@ -9,7 +8,7 @@ import 'package:in_code/pages/assegnaOggetto.dart';
 import 'package:in_code/pages/cambia_seleziona_punto.dart';
 import 'package:in_code/pages/dettaglioggetto_2.dart';
 import 'package:in_code/pages/esegui_Interventi.dart';
-import 'package:in_code/pages/interventionScreen.dart';
+import 'package:in_code/pages/interventions/interventionScreen.dart';
 import 'package:in_code/pages/nodettaglioggeto.dart';
 import 'package:in_code/pages/profile_screen.dart';
 import 'package:in_code/pages/projects/projects_screen.dart';
